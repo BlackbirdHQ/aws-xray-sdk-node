@@ -2,7 +2,7 @@
  * @module context_utils
  */
 
-var cls = require('continuation-local-storage');
+var cls = process.env.AWS_XRAY_EXPERIMENTAL_ASYNC_AWAIT ? require('cls-hooked') : require('continuation-local-storage');
 
 var logger = require('./logger');
 var Segment = require('./segments/segment');
